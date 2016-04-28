@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var rooms = require('./data/rooms.json');
 
 app.set('view engine', 'jade');
 app.set('views', './views');
@@ -14,8 +15,10 @@ app.get('/', function(req ,res) {
 });
 
 app.get('/admin/rooms', function(req, res) {
+    
     res.render('rooms', {
-        title: 'Chat Rooms'
+        title: 'Chat Rooms',
+        rooms: rooms
     });
 });
 

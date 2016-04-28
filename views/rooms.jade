@@ -1,3 +1,9 @@
 extends layout
 block content
     h1 Chat Rooms:
+
+    .row
+        .col-md-4
+            ul.list-group
+                each room in rooms
+                    li.list-group-item #{room.name}
