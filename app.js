@@ -48,7 +48,7 @@ app.post('/admin/rooms/add', function(req, res) {
     // emulate saving new room
     rooms.push(room);
 
-    res.json(room);
+    res.redirect('/admin/rooms');
 });
 
 // listen server

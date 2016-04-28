@@ -1,9 +1,15 @@
 extends layout
 block content
     h1 Chat Rooms:
+    table.table.table-responsive.table-striped
+        thead
+            tr
+                th ID
+                th Name
+        tbody
+            each room in rooms
+                tr
+                    td= room.id
+                    td= room.name
 
-    .row
-        .col-md-4
-            ul.list-group
-                each room in rooms
-                    li.list-group-item #{room.name}
+    a.btn.btn-primary(href="rooms/add") Add new chat room
