@@ -6,10 +6,13 @@ block content
             tr
                 th ID
                 th Name
+                th Delete
         tbody
             each room in rooms
                 tr
                     td= room.id
                     td= room.name
+                    td(style="width: 50px;"): a(href="/admin/rooms/delete/#{room.id}")
+                            span.glyphicon.glyphicon-remove
 
     a.btn.btn-primary(href="rooms/add") Add new chat room

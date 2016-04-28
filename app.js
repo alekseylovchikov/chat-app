@@ -51,6 +51,15 @@ app.post('/admin/rooms/add', function(req, res) {
     res.redirect('/admin/rooms');
 });
 
+app.get('/admin/rooms/delete/:id', function(req, res) {
+    // get room id from params
+    var roomId = req.params.id;
+
+    rooms = rooms.filter(r => r.id !== roomId);
+
+    res.redirect('/admin/rooms');
+});
+
 // listen server
 app.listen(port, function() {
 	console.log('open: http://localhost:' + port);
